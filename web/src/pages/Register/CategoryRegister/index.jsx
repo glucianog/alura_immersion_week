@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import { RegisterWrapper } from '../styles';
+import { Button } from '../../../components/Button';
 
 const CategoryRegister = () => {
   const initialValues = {
@@ -50,9 +51,8 @@ const CategoryRegister = () => {
 
           <FormField
             label="Descrição:"
+            type="textarea"
             name="description"
-            type="text"
-            isTextArea
             value={categoryValues.description}
             onChange={handleValueChange}
           />
@@ -65,14 +65,13 @@ const CategoryRegister = () => {
             onChange={handleValueChange}
           />
 
-          <button>
+          <Button>
             Cadastrar
-          </button>
+          </Button>
         </form>
-
         <ul>
-          {categoryList.map((category, index) => (
-            <li key={index}>
+          {categoryList.map((category) => (
+            <li key={`id_${category}`}>
               {category.name}
             </li>
           ))}
