@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// eslint-disable-next-line import/prefer-default-export
 export const Button = styled.button`
   color: var(--white);
   border: 1px solid var(--white);
@@ -26,6 +27,4 @@ export const Button = styled.button`
     right: 0;
     text-align: center;
   }
-`; 
-
-export default Button;
+`;

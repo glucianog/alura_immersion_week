@@ -2,6 +2,7 @@
 import React from 'react';
 import SlickSlider from 'react-slick';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Container = styled.ul`
   padding: 0;
@@ -38,7 +39,6 @@ export const SliderItem = styled.li`
   }
 `;
 
-
 const Slider = ({ children }) => (
   <Container>
     <SlickSlider {...{
@@ -49,7 +49,7 @@ const Slider = ({ children }) => (
       variableWidth: true,
       adaptiveHeight: true,
       slidesToShow: 4,
-      slidesToScroll: 1
+      slidesToScroll: 1,
     }}
     >
       {children}
@@ -57,4 +57,10 @@ const Slider = ({ children }) => (
   </Container>
 );
 
-export default Slider; 
+Slider.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node]).isRequired,
+};
+
+export default Slider;
