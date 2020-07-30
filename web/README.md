@@ -1,6 +1,6 @@
 # Repositório de Treinamento
 
-Repositório destinado ao workshop Imersão React, sobre ReactJS realizado pela **Alura**.
+Repositório destinado ao workshop Imersão React, sobre ReactJS, realizado pela **Alura**.
 
 Agradecimento especial aos instrutores:
 - Mario Souto [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/omariosouto)](https://www.linkedin.com/in/omariosouto)
