@@ -5,6 +5,7 @@ import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import { RegisterWrapper } from '../styles';
 import { Button } from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 const CategoryRegister = () => {
   const initialValues = {
@@ -13,17 +14,8 @@ const CategoryRegister = () => {
     color: '#141414',
   };
 
+  const { categoryValues, handleValueChange, clearForm } = useForm(initialValues);
   const [categoryList, setCategoryList] = useState([]);
-  const [categoryValues, setCategoryValues] = useState(initialValues);
-
-  function handleValueChange(categoryInfos) {
-    const { value } = categoryInfos.target;
-    const name = categoryInfos.target.getAttribute('name');
-    setCategoryValues({
-      ...categoryValues,
-      [name]: value,
-    });
-  }
 
   useEffect(() => {
     const URL = window.location.hostname.includes('localhost') ? 'http://localhost:8080/categories'
@@ -47,7 +39,7 @@ const CategoryRegister = () => {
           onSubmit={function handleSubmit(eventInfos) {
             eventInfos.preventDefault();
             setCategoryList([...categoryList, categoryValues]);
-            setCategoryValues(initialValues);
+            clearForm();
           }}
         >
 
