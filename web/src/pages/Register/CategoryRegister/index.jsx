@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import PageDefault from '../../../components/PageDefault';
@@ -24,6 +24,15 @@ const CategoryRegister = () => {
       [name]: value,
     });
   }
+
+  useEffect(() => {
+    const URL = 'http://localhost:8080/categories';
+    fetch(URL)
+      .then(async (response) => {
+        const data = await response.json();
+        setCategoryList([...data]);
+      });
+  }, []);
 
   return (
     <PageDefault>
@@ -65,13 +74,21 @@ const CategoryRegister = () => {
             onChange={handleValueChange}
           />
 
-          <Button>
+          <Button as={Link} className="ButtonLink" to="/cadastro/video">
             Cadastrar
           </Button>
+
         </form>
+
+        {categoryList.length === 0 && (
+          <div>
+            Loading...
+          </div>
+        )}
+
         <ul>
           {categoryList.map((category) => (
-            <li key={`id_${category}`}>
+            <li key={category.id}>
               {category.name}
             </li>
           ))}
