@@ -8,7 +8,7 @@ import PageDefault from '../../components/PageDefault';
 
 const HomeWrapper = styled.div`
   background: var(--grayDark);
-  padding-top: 94px;
+  padding-top: 45px;
 
   @media(max-width: 800px) {
     padding-top: 40px;
@@ -18,7 +18,7 @@ const HomeWrapper = styled.div`
 function Home() {
   return (
     <HomeWrapper>
-      <PageDefault> 
+      <PageDefault>
         <BannerMain
           videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
           url={dadosIniciais.categorias[0].videos[0].url}
@@ -36,15 +36,15 @@ function Home() {
 
         <Carousel
           category={dadosIniciais.categorias[2]}
-        />      
+        />
 
         <Carousel
           category={dadosIniciais.categorias[3]}
-        />      
+        />
 
         <Carousel
           category={dadosIniciais.categorias[4]}
-        />      
+        />
 
         <Carousel
           category={dadosIniciais.categorias[5]}
