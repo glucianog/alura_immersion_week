@@ -1,49 +1,14 @@
 import styled from 'styled-components';
 
-export const BannerMainContainer = styled.section`
-  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`}; 
-  background-position: center;
-  background-size: cover;
-  color: var(--white);
-  height: 80vh;
-  position: relative;
-
-  @media (max-width: 800px) {
-    height: auto;
-    min-height: 50vh;
-  }
-
-  &:after,
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    height: 20%;
-  }
-
-  &:before {
-    top: 0;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-  }
-
-  &:after {
-    bottom: 0;
-    background: linear-gradient(0deg, #141414 0%, transparent 100%);
-  }
-`;
-
 export const ContentAreaContainer = styled.section`
-  align-items: center;
-  display: flex;
-  height: 100%;
-  justify-content: center;
   margin-left: 5%;
   margin-right: 5%;
-
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
   @media (max-width: 800px) {
     padding-top: 100px;
     flex-direction: column;
@@ -51,17 +16,16 @@ export const ContentAreaContainer = styled.section`
 `;
 
 ContentAreaContainer.Item = styled.div`
+  width: 50%;
   display: inline-block;
   margin-bottom: 50px;
-  width: 50%;
-  
   @media (max-width: 800px) {
     width: 100%;
   }
 `;
 
 ContentAreaContainer.Category = styled.h1`
-  font-family: Roboto;
+  font-family: Montserrat;
   font-style: normal;
   font-weight: normal;
   font-size: 60px;
@@ -101,8 +65,43 @@ ContentAreaContainer.Title = styled.h2`
   }
 `;
 
+export const BannerMainContainer = styled.section`
+  height: 80vh;
+  position: relative;
+  color: #fff;
+  background-image: ${({ backgroundImage }) => `url(${backgroundImage})`}; 
+  background-size: cover;
+  background-position: center;
+  @media (max-width: 800px) {
+    height: auto;
+    min-height: 50vh;
+  }
+
+  &:after,
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 20%;
+  }
+
+  &:before {
+    top: 0;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+  }
+
+  &:after {
+    bottom: 0;
+    background: linear-gradient(0deg, #141414 0%, transparent 100%);
+  }
+`;
+
 export const WatchButton = styled.button`
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   cursor: pointer;
   padding: 16px 24px;
