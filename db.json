@@ -4,19 +4,19 @@
       "id": 1,
       "title": "MOBA",
       "description": "Uma categoria",
-      "color": "#6BD1FF"
+      "color": "#657ed4"
     },
     {
       "id": 2,
       "title": "Terror",
       "description": "Uma categoria outra ",
-      "color": "#6BD1FF"
+      "color": "#a20021"
     },
     {
       "id": 3,
       "title": "Indie",
       "description": "Uma categoria outra ",
-      "color": "#6BD1FF"
+      "color": "#a9bcd0"
     }
   ],
   "videos": [
@@ -27,16 +27,40 @@
       "url": "https://www.youtube.com/watch?v=CHnYHTP0U50"
     },
     {
+      "title": "Dota2",
+      "url": "https://www.youtube.com/watch?v=j6SmAoaH470",
+      "categoryId": 1,
       "id": 2
     },
     {
+      "title": "League of Legends",
+      "url": "https://www.youtube.com/watch?v=7O21Z6vgtmY",
+      "categoryId": 1,
       "id": 3
     },
     {
-      "title": "TIGRE",
-      "url": "https://www.youtube.com/watch?v=hx034LtweHg",
+      "title": "Heroes of Newerth",
+      "url": "https://www.youtube.com/watch?v=xJ0gGFvxJFM",
       "categoryId": 1,
       "id": 4
+    },
+    {
+      "title": "Realm of The Titans",
+      "url": "https://www.youtube.com/watch?v=qLyeHrEU6dw",
+      "categoryId": 1,
+      "id": 5
+    },
+    {
+      "title": "SMITE",
+      "url": "https://www.youtube.com/watch?v=9IZTss4ud1k",
+      "categoryId": 1,
+      "id": 6
+    },
+    {
+      "title": "Heroes of The Storm",
+      "url": "https://www.youtube.com/watch?v=C4bnFYsXW6s",
+      "categoryId": 1,
+      "id": 7
     }
   ]
 }

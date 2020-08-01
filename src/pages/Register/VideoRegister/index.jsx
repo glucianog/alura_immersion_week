@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAlert } from 'react-alert';
 
@@ -8,16 +8,29 @@ import FormField from '../../../components/FormField';
 import useForm from '../../../hooks/useForm';
 import { Button } from '../../../components/Button';
 import videosRepository from '../../../respositories/videos';
+import categoriesRepository from '../../../respositories/categories';
 
 const VideoRegister = () => {
 
   const alert = useAlert();
   const history = useHistory();
+
+  const [categories, setCategories] = useState([]);
+  const categoryTitles = categories.map(({ title }) => title);
   const { handleValueChange, values } = useForm({
     title: '',
     url: '',
     category: '',
   });
+
+  useEffect(() => {
+    categoriesRepository
+      .getAll()
+      .then((categoriesFromServer) => {
+        setCategories(categoriesFromServer);
+      });
+  }, []);
+
   return (
     <PageDefault>
       <RegisterWrapper>
@@ -26,10 +39,14 @@ const VideoRegister = () => {
         <form onSubmit={(event) => {
           event.preventDefault();
 
+          const selectedCategory = categories.find((category) => (
+            category.title === values.category
+          ));
+
           videosRepository.create({
             title: values.title,
             url: values.url,
-            categoryId: 1,
+            categoryId: selectedCategory.id,
           })
             .then(() => {
               alert.show('Video saved successfully.');
@@ -59,6 +76,7 @@ const VideoRegister = () => {
             name="category"
             value={values.category}
             onChange={handleValueChange}
+            suggestions={categoryTitles}
           />
 
           <Button type="submit">
