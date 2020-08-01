@@ -2,15 +2,41 @@
   "categories": [
     {
       "id": 1,
-      "name": "Front-End",
+      "title": "MOBA",
       "description": "Uma categoria",
       "color": "#6BD1FF"
     },
     {
       "id": 2,
-      "name": "Back-End",
+      "title": "Terror",
       "description": "Uma categoria outra ",
       "color": "#6BD1FF"
+    },
+    {
+      "id": 3,
+      "title": "Indie",
+      "description": "Uma categoria outra ",
+      "color": "#6BD1FF"
+    }
+  ],
+  "videos": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "title": "These Items Break the NEW Poppy (HUGE BUFF) ",
+      "url": "https://www.youtube.com/watch?v=CHnYHTP0U50"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "title": "TIGRE",
+      "url": "https://www.youtube.com/watch?v=hx034LtweHg",
+      "categoryId": 1,
+      "id": 4
     }
   ]
 }

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 // eslint-disable-next-line import/prefer-default-export
 export const Button = styled.button`
+  background-color: var(--darkGray);
   color: var(--white);
   border: 1px solid var(--white);
   border-radius: 4px;

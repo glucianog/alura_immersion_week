@@ -1,23 +1,23 @@
 import { useState } from 'react';
 
 export default function useForm(initialValues) {
-  const [categoryValues, setCategoryValues] = useState(initialValues);
+  const [values, setValues] = useState(initialValues);
 
   function handleValueChange(categoryInfos) {
     const { value } = categoryInfos.target;
     const name = categoryInfos.target.getAttribute('name');
-    setCategoryValues({
-      ...categoryValues,
+    setValues({
+      ...values,
       [name]: value,
     });
   }
 
   function clearForm() {
-    setCategoryValues(initialValues);
+    setValues(initialValues);
   }
 
   return {
-    categoryValues,
+    values,
     handleValueChange,
     clearForm,
   };

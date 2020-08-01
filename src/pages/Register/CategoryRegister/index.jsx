@@ -9,12 +9,12 @@ import useForm from '../../../hooks/useForm';
 
 const CategoryRegister = () => {
   const initialValues = {
-    name: '',
+    title: '',
     description: '',
     color: '#141414',
   };
 
-  const { categoryValues, handleValueChange, clearForm } = useForm(initialValues);
+  const { values, handleValueChange, clearForm } = useForm(initialValues);
   const [categoryList, setCategoryList] = useState([]);
 
   useEffect(() => {
@@ -33,21 +33,21 @@ const CategoryRegister = () => {
         <h1>
           {' '}
           Cadastro de Categoria:
-          {categoryValues.name}
+          {values.name}
         </h1>
         <form
           onSubmit={function handleSubmit(eventInfos) {
             eventInfos.preventDefault();
-            setCategoryList([...categoryList, categoryValues]);
+            setCategoryList([...categoryList, values]);
             clearForm();
           }}
         >
 
           <FormField
             label="Nome da Categoria:"
-            name="name"
+            name="title"
             type="text"
-            value={categoryValues.name}
+            value={values.title}
             onChange={handleValueChange}
           />
 
@@ -55,7 +55,7 @@ const CategoryRegister = () => {
             label="Descrição:"
             type="textarea"
             name="description"
-            value={categoryValues.description}
+            value={values.description}
             onChange={handleValueChange}
           />
 
@@ -63,7 +63,7 @@ const CategoryRegister = () => {
             label="Cor:"
             name="color"
             type="color"
-            value={categoryValues.color}
+            value={values.color}
             onChange={handleValueChange}
           />
 
@@ -82,7 +82,7 @@ const CategoryRegister = () => {
         <ul>
           {categoryList.map((category) => (
             <li key={category.id}>
-              {category.name}
+              {category.title}
             </li>
           ))}
         </ul>
